@@ -1,0 +1,126 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script  src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+        <link rel="stylesheet" type="text/css" href="hotel.css">
+    </head>
+    <body>
+       <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">WheelsForMeals</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="1.html">Pin your Location</a></li>
+            <li class="active"><a>Hotels</a></li>
+            <li><a href="home.html">Back</a></li>
+          </ul>
+        </div>
+      </nav>
+      <img id="l" src="images/aaaa.png"><br><br><br>
+      <div>
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+              <img src="images/10.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides fade">
+              <img src="images/11.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides fade">
+              <img src="images/13.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides fade">
+                <img src="images/111.jpg" style="width:100%">
+              </div>
+              
+            </div>
+            <br>
+            
+            <div style="text-align:center">
+              <span class="dot"></span> 
+              <span class="dot"></span> 
+              <span class="dot"></span> 
+              <span class="dot"></span> 
+            </div>
+            
+          <script>
+            var slideIndex = 0;
+            showSlides();
+            
+            function showSlides() {
+              var i;
+              var slides = document.getElementsByClassName("mySlides");
+              var dots = document.getElementsByClassName("dot");
+              for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+              }
+              slideIndex++;
+              if (slideIndex > slides.length) {slideIndex = 1}    
+              for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";  
+              dots[slideIndex-1].className += " active";
+              setTimeout(showSlides, 2000);
+            }
+          </script>
+      </div>
+</div><br><br><br>
+<center>
+    <table cellspacing="10px">
+        <tr border="3"> 
+                <td><div class="container" style="height:200px; width: 300px;"> 
+                    <img style="height:200px;" class="image" id="v" src="images/haribhavanam.png"><div class="overlay">
+                        <div class="text">Haribhavanam<br>-Veg&Non-veg-</div>
+                      </div>
+                    </div></td>
+                    <td><div class="container"  style="height:200px; width: 300px;">
+                        <img style="height:200px;" class="image" id="v" src="images/valarmathi.jpeg"><div class="overlay">
+                            <div class="text">Valarmathi<br>-Veg&Non-veg-</div>
+                          </div>
+                        </div></td>
+                        <td><div class="container" style="height:180px; width: 300px;"> 
+                            <img style="height:180px;" class="image" id="v" src="images/kuppanna.png">
+                            <div class="overlay">
+                              <div class="text">Junior kuppanna<br>-Veg&Non-veg-</div>
+                            </div>
+                          </div></td>
+                          <td><div class="container" style="height:200px; width: 300px;">
+                            <img style="height:200px;" Class="image" id="v" src="images/KCM.png"><div class="overlay">
+                            <div class="text">KCM<br>-Veg&Non-veg-</div>
+                          </div>
+                        </div></td>
+                        </div></td>
+                      </tr>
+                      <tr>
+                        <td><div class="container" style="height:200px; width: 300px;">
+                            <img style="height:200px;" class="image" id="v" src="images/sms.jpg"><div class="overlay">
+                            <div class="text">SMS<br>-Veg&Non-veg-</div>
+                          </div>
+                        </div></td>
+                        <td><div class="container" style="height:200px; width: 300px;">
+                          <img style="height:200px;" class="image" id="v" src="images/Thalappakatti.png"><div class="overlay">
+                          <div class="text">Dindigul Thalappakatti<br>-Veg&Non-veg-</div>
+                        </div>
+                        <td><div class="container" style="height:200px; width: 300px;">
+                          <img style="height:200px;" class="image" id="v" src="images/venu.jpg"><div class="overlay">
+                          <div class="text">Venu Biriyani<br>-Veg&Non-veg-</div>
+                        </div>
+                      </div></td>
+                      <td><div class="container" style="height:200px; width: 300px;">
+                        <img style="height:200px;" class="image" id="v" src="images/cockraco.jpg"><div class="overlay">
+                        <div class="text">Cockraco<br>-Veg&Non-veg-</div>
+                      </div> 
+                  </tr>
+
+                </table><br><br><br><br>
+              </center>
+                    </body>
+              </html>

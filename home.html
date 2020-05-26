@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <title>home</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <style>
+          * {box-sizing: border-box;}
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 200px;
+}
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.8;
+}
+.form-container .cancel {
+  background-color: red;
+}
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+        </style>
+        <script>
+          function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+        </script>
+    </head>
+    <body>
+        <nav class="navbar  navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="#">WheelsForMeals</a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li class="active"><a>Home</a></li>
+                <li><a href="1.html">Pin your location</a></li>
+                <li><a href="hotel.html">Hotels</a></li>
+                <li><a href="app.html">Our App</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="about.html">Awards</a></li>
+                <li><a href="about.html">Our location</a></li>
+                <li><a href="about.html">Contact</a></li>
+              </ul>
+            </div>
+          </nav>
+          <img src="images/aaaa.png" style="width: 300px;height:50px"><br><br><br>
+          <div class="container">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="item active">
+                  <center><a style="text-decoration: none;" href="fastfood.html"><button class="btn btn-lg btn-warning btn-block">Click me let us explore Fast Food</button></a></center>
+                  <img src="images/caro1.jpg" style="width:100%;">
+                </div>
+          
+                <div class="item">
+                  <center><a style="text-decoration: none;" href="veg and non.html"><button class="btn btn-lg btn-danger btn-block">Click me let us explore Non-Veg</button></a></center>
+                  <img src="images/caro2.jpg" style="width:100%;">
+                </div>
+              
+                <div class="item">
+                  <center><a style="text-decoration: none;" href="veg.html"><button class="btn btn-lg btn-success btn-block">Click me let us explore Veg</button></a></center>
+                  <img src="images/caro3.jpg"  style="width:100%;">
+                </div>
+                <div class="item">
+                  <center><a href="hotel.html"><button class="btn btn-lg btn-primary btn-block">Click me let us explore Veg & Non-Veg</button></a></center>
+                  <img src="images/caro4.jpg"  style="width:100%;">
+                </div>
+              </div>
+              <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+    </div><br><br><br><br><br><br>
+    <button class="open-button" onclick="openForm()"><i class="fa fa-commenting-o" aria-hidden="true"></i>  Chat with us</button>
+
+    <div class="chat-popup" id="myForm" ng-app="">
+    <form class="form-container">
+    <h1>Chat with us</h1>
+
+    <label for="msg"><b>Message</b></label>
+    <textarea id="a" ng-app="" placeholder="Type message.." name="msg" ng-model="name"></textarea>
+    <p style="float:left" ng-bind="name"></p>
+    <button type="submit" onclick="myfun2()" class="btn">Send</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+  </div>
+  <script>
+    function myfun2()
+    {
+        document.getElementById('a').value="";
+        alert('we will contact you soon');
+    }
+  </script>
+      </body>
+    </html>

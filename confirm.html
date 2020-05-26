@@ -1,0 +1,132 @@
+<html>
+    <head>
+        <title>confirm</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>        
+        <style>
+            img
+            {
+                width:50px;
+                margin-bottom: 20px;
+            }
+            ul{
+                text-align: center;
+            }
+            ul li{
+                display: inline-block;
+                width: 200px;
+                position: relative;
+                 }
+            ul li .fa
+            {
+                background: #ccc;
+                width:16px;
+                height:16px;
+                color:#fff;
+                border-radius: 50%;
+                padding: 5px;
+            }
+            ul li .fa::after
+            {
+                content: '';
+                background-color: #ccc;
+                height:5px;
+                width:300px;
+                display:block;
+                position: absolute;
+                left:0;
+                bottom:80px;
+                z-index: -1;
+            }
+            ul li:nth-child(1) .fa::after,
+            ul li:nth-child(2) .fa::after,
+            ul li:nth-child(3) .fa::after
+            {
+                width:200px;
+                left:100px;
+            }
+            ul li:nth-child(4) .fa::after
+            {
+                width: 0px;
+                right:100px;
+            }
+.container {
+    padding: 20px;
+  border: 1px solid #BFBFBF;
+                border-top:5px solid green  ;
+                height: 350px;
+                width:1000px;
+                margin-left:50px;
+                box-shadow: 10px 10px 5px #aaaaaa;
+                box-sizing: border-box;
+}
+
+
+.large-font {
+  font-size: 48px;
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4CAF50;
+}
+.button:hover
+{
+    background-color: black;
+    color:white;
+}
+a
+{
+    text-decoration: none; 
+}
+#a
+{
+    float:right;
+    margin-right: 40px;
+    height:300px;
+    width:300px;
+}
+ul li:nth-child(1) .fa
+{
+    background-color: green;
+}
+            </style>
+    </head>
+    <body>
+        <center><img src="images/aaaa.png" style="width: 300px;height:50px"></center>
+        <div class="progress">
+        <ul>
+            <li>
+                <img src="images/confirm.PNG"><br>
+                <i class="fa fa-check"></i>
+                <p>Confirm Your order</p><br>
+            </li>
+            <li>
+                <img  src="images/payment.PNG"><br>
+                <i class="fa fa-check"></i>
+                <p>Payment</p><br>
+            </li>
+            <li>
+                <img src="images/cooking.PNG"><br>
+                <i class="fa fa-check"></i>
+                <p>cooking</p><br>
+            </li>
+            <li>
+                <img src="images/delivery.PNG"><br>
+                <i class="fa fa-check"></i>
+                <p>Out for delivery</p><br>
+            </li>
+        </ul>
+        </div><br><br>
+    <center><div class="container">
+                <img id="a" src="images/confirm.gif">
+                <h1 class="large-font" style="color:MediumSeaGreen;"><b>Order Confirmation</b></h1> 
+                <p><span style="font-size:20px;color:gray">Confirming your order will proceed to payment which can be Net-Banking or Cash On Delivery</span></p><br><br>
+                <a href="addme.html"><button style="margin-left:50px" class="button">Back to Addme</button></a><a href="payment.html"><button style="margin-left:100px" class="button">Proceed to Payment</button></a>
+            </div></center>
+    </body>
+</html>

@@ -1,0 +1,121 @@
+<html>
+      <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+        <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+        <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css"> 
+        <link rel="stylesheet" type="text/css" href="simple.css">
+      </head>
+      <body background="bg.jpg">
+        <div class="bg-layer">
+          <center><br><br><img src="images/aaaa.png"></center>
+              <div id="a" class="rounded"><br><br><br>
+              <center><div class="login100-pic js-tilt" data-tilt>
+              <img src="img-01.png"></center><br><br><br>
+              <center><span style="color:white">CREATE ACCOUNT</span></center><br>
+              <form action="/submit" id="form" method="post">
+              <input id="l"  style="float:left;margin-left: 40px;" name="username" type="text" placeholder="User Name" required><br><br>
+              <br><input id="l1"  style="float:left;margin-left: 40px;" onfocus="check1()" name="pass" type="password" placeholder="Password" required><br><br>
+              <br><input id="l2"  style="float:left;margin-left: 40px;"  name="cpass" type="password" placeholder="Confirm Password" required><br><br>
+              <script>
+                function check1()
+                {
+                  document.getElementById("l1").style.border = "border:1px solid";
+                  document.getElementById("l2").style.border = "border:1px solid;";
+
+                }
+                function check()
+                {
+                   if(document.getElementById("l1").value!=document.getElementById("l2").value)
+                  {
+                    document.getElementById("l1").value="";
+                    document.getElementById("l2").value="";
+                    document.getElementById("l1").style.border = "thick solid red";
+                    document.getElementById("l2").style.border = "thick solid red";
+                   }
+                   else
+                   {
+                    document.getElementById("l1").style.border = "thick solid green";
+                    document.getElementById("l2").style.border = "thick solid green";
+                   }
+                }
+              </script>
+					    <br><input id="z" style="float:left;margin-left: 40px;" name="fname" type="text" placeholder="First Name" onfocus="check()" required><input id="z" style="float:right;margin-right: 40px;" type="text" placeholder="Last Name" name="lname"><br><br><br>
+              <input id="z" style="float:left;margin-left: 40px;" name="anumber" type="text" placeholder="Mobile Number" required><input id="z" style="float:right;margin-right: 40px;" type="text" placeholder="Alternate Number" name="bnumber" ><br><br><br>
+              <input id="z" style="float:left;margin-left: 40px;" name="dob" type="date" placeholder="Date of birth dd/mm/yy"><br><br><br>
+              <input id="c" type="email" name="email" placeholder="Email-Id"><br><br><br>
+              <input id="k" type="text" name="address" placeholder="Address" required><br><br><br><br><br><br><br><br><br>
+              <div style="float:left;margin-left: 40px;color:white"><input type="checkbox" required>&nbsp;&nbsp;I AGREE TO CREATE ACCOUNT</div><br><br>
+              <input type="submit" class="btn btn-success" value="submit" style="padding: 10px; width:100px; float:left; margin-left:250px;"><input type="reset" class="btn btn-warning" style="width:100px;color:white;padding:10px;float:right;margin-right:250px;" value="Reset"><br><br><br>
+            </form>
+            <center><a href="index.html"><button style="padding:10px;width:100px;"class="btn btn-info">HOME</button></a></center>
+          </div>
+        <div> 
+            <div class="slideshow-container">
+
+                <div class="mySlides fade">
+                  <img src="images/food.jpg" style="width:100%">
+                </div>
+                
+                <div class="mySlides fade">
+                  <img src="images/food1.jpg" style="width:100%">
+                </div>
+                
+                <div class="mySlides fade">
+                  <img src="images/food2.jpg" style="width:100%">
+                </div>
+                
+                <div class="mySlides fade">
+                    <img src="images/food4.jpg" style="width:100%">
+                  </div>
+                  
+                </div>
+                <br>
+                
+                <div style="text-align:center">
+                  <span class="dot"></span> 
+                  <span class="dot"></span> 
+                  <span class="dot"></span> 
+                  <span class="dot"></span> 
+                </div>
+                
+              <script>
+                var slideIndex = 0;
+                showSlides();
+                
+                function showSlides() {
+                  var i;
+                  var slides = document.getElementsByClassName("mySlides");
+                  var dots = document.getElementsByClassName("dot");
+                  for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";  
+                  }
+                  slideIndex++;
+                  if (slideIndex > slides.length) {slideIndex = 1}    
+                  for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                  }
+                  slides[slideIndex-1].style.display = "block";  
+                  dots[slideIndex-1].className += " active";
+                  setTimeout(showSlides, 2000);
+                }
+              </script>
+          </div>
+    </div>
+        <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	      <script src="vendor/bootstrap/js/popper.js"></script>
+	      <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	      <script src="vendor/select2/select2.min.js"></script>
+	      <script src="vendor/tilt/tilt.jquery.min.js"></script>
+	      <script>
+		      $('.js-tilt').tilt({
+			    scale: 1.1
+		      })
+	      </script>
+	      <script src="js/main.js"></script>
+    </body>
+</html>

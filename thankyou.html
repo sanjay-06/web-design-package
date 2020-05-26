@@ -1,0 +1,182 @@
+<html>
+    <head>
+        <title>thank you</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+        <style>
+            img
+            {
+                width:50px;
+                margin-bottom: 20px;
+            }
+            ul{
+                text-align: center;
+            }
+            ul li{
+                display: inline-block;
+                width: 200px;
+                position: relative;
+                 }
+            ul li .fa
+            {
+                background: #ccc;
+                width:16px;
+                height:16px;
+                color:#fff;
+                border-radius: 50%;
+                padding: 5px;
+            }
+            ul li .fa::after
+            {
+                content: '';
+                background-color: #ccc;
+                height:5px;
+                width:300px;
+                display:block;
+                position: absolute;
+                left:0;
+                bottom:80px;
+                z-index: -1;
+            }
+            ul li:nth-child(1) .fa::after,
+            ul li:nth-child(2) .fa::after,
+            ul li:nth-child(3) .fa::after
+            {
+                width:200px;
+                left:100px;
+            }
+            ul li:nth-child(4) .fa::after
+            {
+                width: 0px;
+                right:100px;
+            }
+            ul li:nth-child(1) .fa,
+            ul li:nth-child(2) .fa,
+            ul li:nth-child(3) .fa,
+            ul li:nth-child(4) .fa
+            {
+                background: green;
+            }
+            ul li:nth-child(1) .fa::after,
+            ul li:nth-child(2) .fa::after,
+            ul li:nth-child(3) .fa::after
+            {
+                background: green;
+            }
+            .container
+            {
+                border: 1px solid #BFBFBF;
+                border-top:5px solid green  ;
+                height: 500px;
+                width:500px;
+                margin-left:50px;
+                box-shadow: 10px 10px 5px #aaaaaa;
+            }
+            img.c
+            {
+                margin-top:10px;
+                height: 100px;
+                width: 150px;
+            }
+            h1
+            {
+                font-family:'Sofia';
+                margin-left:10px;
+            }
+            p.a
+            {
+                font-family:'Sofia';
+            }
+            .container-contact1-form-btn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.contact1-form-btn {
+  min-width: 193px;
+  height: 50px;
+  border-radius: 25px;
+  background: #57b846;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 25px;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.contact1-form-btn i {
+  margin-left: 7px;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.contact1-form-btn:hover {
+  background: #333333;
+}
+
+.contact1-form-btn:hover i {
+  -webkit-transform: translateX(-10px);
+  -moz-transform: translateX(-10px);
+  -ms-transform: translateX(-10px);
+  -o-transform: translateX(-10px);
+  transform: translateX(-10px);
+}
+a
+{
+    text-decoration: none; 
+}    
+            </style>
+    </head>
+    <body>
+        <center><img src="images/aaaa.png" style="width: 300px;height:50px"></center>
+        <div class="progress">
+        <ul>
+            <li>
+                <img src="images/confirm.PNG"><br>
+                <i class="fa fa-check"></i>
+                <p>Confirm Your order</p><br>
+            </li>
+            <li>
+                <img  src="images/payment.PNG"><br>
+                <i class="fa fa-check"></i>
+                <p>Payment</p><br>
+            </li>
+            <li>
+                <img src="images/cooking.PNG"><br>
+                <i class="fa fa-check"></i>
+                <p>cooking</p><br>
+            </li>
+            <li>
+                <img src="images/delivery.PNG"><br>
+                <i class="fa fa-check"></i>
+                <p>Delivered</p><br>
+            </li>
+        </ul>
+        </div><br><br>
+        <center><div class="container">
+            <center><br><img class="c" src="images/tick.gif"></center>
+         <center><h1>Food Delivered !!!</h1></center>
+         <p class="a">Dear Customer,<br>
+        Thank you so much for giving us a chance of serving you.<br>
+        Hope you enjoyed our service.<br>
+        Please feel free to contact if you have any queries</p><br><br>
+        <div class="container-contact1-form-btn">
+            <button onclick="alert('Thank you for calling')" class="contact1-form-btn">
+                <span>
+                    <i class="fa fa-phone"></i>
+                    &emsp;call us
+                </span>
+            </button></a>
+        </div>
+        </div></center>
+    </body>
+</html>

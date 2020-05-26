@@ -1,0 +1,318 @@
+<html>
+    <head>
+        <title>payment</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            img
+            {
+                width:50px;
+                margin-bottom: 20px;
+            }
+            ul{
+                text-align: center;
+            }
+            ul li{
+                display: inline-block;
+                width: 200px;
+                position: relative;
+                 }
+            ul li .fa
+            {
+                background: #ccc;
+                width:16px;
+                height:16px;
+                color:#fff;
+                border-radius: 50%;
+                padding: 5px;
+            }
+            ul li .fa::after
+            {
+                content: '';
+                background-color: #ccc;
+                height:5px;
+                width:300px;
+                display:block;
+                position: absolute;
+                left:0;
+                bottom:80px;
+                z-index: -1;
+            }
+            ul li:nth-child(1) .fa::after,
+            ul li:nth-child(2) .fa::after,
+            ul li:nth-child(3) .fa::after
+            {
+                width:200px;
+                left:100px;
+            }
+            ul li:nth-child(4) .fa::after
+            {
+                width: 0px;
+                right:100px;
+            }
+            ul li:nth-child(1) .fa,
+            ul li:nth-child(2) .fa
+            {
+                background: green;
+            }
+            ul li:nth-child(1) .fa::after
+            {
+                background: green;
+            }
+body {
+  position: relative;
+  text-transform: uppercase;
+  padding: 20px 0;
+}
+
+#amount {
+  font-size: 12px;
+}
+
+#amount strong {
+  font-size: 14px;
+}
+
+#card-back {
+  top: 40px;
+  right: 0;
+  z-index: -2;
+}
+
+#card-btn {
+  background-color: rgba(251, 251, 251, 0.8);
+  position: absolute;
+  bottom: -55px;
+  right: 0;
+  width: 150px;
+  border-radius: 8px;
+  height: 42px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+input::-webkit-input-placeholder {
+  color: #fff;
+}
+#card-cvc {
+  width: 60px;
+  margin-bottom: 0;
+}
+
+#card-front,
+#card-back {
+  position: absolute;
+  background-color: #498ee4;
+  width: 390px;
+  height: 250px;
+  border-radius: 6px;
+  padding: 20px 30px 0;
+  box-sizing: border-box;
+  font-size: 10px;
+  letter-spacing: 1px;
+  font-weight: 300;
+  color: white;
+}
+
+#card-image {
+  float: right;
+  height: 100%;
+}
+
+#card-image i {
+  font-size: 40px;
+}
+
+#card-month {
+  width: 45%;
+}
+
+#card-number,
+#card-holder {
+  width: 100%;
+  color:white;
+}
+
+#card-stripe {
+  width: 100%;
+  height: 55px;
+  background-color: #3d5266;
+  position: absolute;
+  right: 0;
+}
+#card-year {
+  width: 45%;
+  float: right;
+  color:white;
+}
+
+#cardholder-container {
+  width: 60%;
+  display: inline-block;
+}
+
+#cvc-container {
+  position: absolute;
+  width: 110px;
+  right: -115px;
+  bottom: -10px;
+  padding-left: 20px;
+  box-sizing: border-box;
+}
+
+#cvc-container label {
+  width: 100%;
+}
+
+#cvc-container p {
+  font-size: 6px;
+  text-transform: uppercase;
+  opacity: 0.6;
+  letter-spacing: .5px;
+}
+
+#form-container {
+  margin: auto;
+  width: 500px;
+  height: 300px;
+  position: relative;
+}
+
+#exp-container {
+  margin-left: 10px;
+  width: 32%;
+  display: inline-block;
+}
+
+
+#image-container {
+  width: 100%;
+  position: relative;
+  height: 55px;
+  margin-bottom: 5px;
+  line-height: 55px;
+}
+
+#image-container img {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+input {
+  border: none;
+  outline: none;
+  background-color: #5a9def;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+  margin: 0 0 25px;
+  color: white;
+  font-size: 10px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-family: lato, 'helvetica-light', 'sans-serif';
+  letter-spacing: .7px;
+}
+label {
+  display: block;
+  margin: 0 auto 7px;
+}
+
+#shadow {
+  position: absolute;
+  right: 0;
+  width: 284px;
+  height: 214px;
+  top: 36px;
+  background-color: #000;
+  z-index: -1;
+  border-radius: 8px;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+}
+.button {
+  border: none;
+  color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4CAF50;
+}
+.button:hover
+{
+    background-color: black;
+    color:white;
+}
+a
+{
+    text-decoration: none; 
+}
+            </style>
+    </head>
+    <body>
+        <center><img src="images/aaaa.png" style="width: 300px;height:50px"></center>
+        <div class="progress">
+        <ul>
+            <li>
+                <img src="images/confirm.PNG"><br>
+                <i class="fa fa-check"></i>
+                <p>Confirm Your order</p><br>
+            </li>
+            <li>
+                <img  src="images/payment.PNG"><br>
+                <i class="fa fa-check"></i>
+                <p>Payment</p><br>
+            </li>
+            <li>
+                <img src="images/cooking.PNG"><br>
+                <i class="fa fa-check"></i>
+                <p>cooking</p><br>
+            </li>
+            <li>
+                <img src="images/delivery.PNG"><br>
+                <i class="fa fa-check"></i>
+                <p>Out for delivery</p><br>
+            </li>
+        </ul>
+        </div>
+        <div>
+              <div id="form-container">
+              
+                <div id="card-front">
+                  <div id="image-container">
+                    <span id="card-image"><h2>Net banking</h2></span>
+                  </div>
+                  <form action="/pay" method="post" id="payment">
+                        <label for="card-number">Card Number</label>
+                  <input type="text" id="card-number" name="number" placeholder="1234 5678 9101 1112" length="16" required>
+                        <div id="cardholder-container">
+                            <label for="card-holder">Card Holder</label>
+                            <input type="text" id="card-holder" name="holder" placeholder="e.g.sanjay"  required></div>
+                  <div id="exp-container">
+                    <label for="card-exp">Expiration</label>
+                     <input id="card-month" type="text" placeholder="MM" length="2" name="cmonth" required>
+                    <input id="card-year" type="text" placeholder="YY" length="2"  name="cyear" required></div>
+                      <div id="cvc-container">
+                          <label for="card-cvc"> CVV</label>
+                    <input id="card-cvc" placeholder="XXXX" type="text" min-length="3" max-length="4" name="cvv" required>
+                    <p>Last 3 or 4 digits</p>
+                  </div>
+                </div>
+                <div id="card-back">
+                  <div id="card-stripe">
+                  </div>
+                </div>
+                <input type="text" id="card-token">
+            </div>
+        </div>
+        <center><button class="button">Pay Online</button></center>
+    </form><br>
+    <center><h1>(OR)</h1></center><br>
+    <center><a href="cooking.html"><button style="margin-left:5px;" class="button">Cash On Delivery</button></a></center>
+    </body>
+</html>

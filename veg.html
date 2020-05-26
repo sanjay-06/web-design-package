@@ -1,0 +1,127 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script  src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+        <link rel="stylesheet" type="text/css" href="hotel.css">
+    </head>
+    <body>
+       <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">WheelsForMeals</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="1.html">Pin your Location</a></li>
+            <li class="active"><a>Hotels</a></li>
+            <li><a href="home.html">Back</a></li>
+          </ul>
+        </div>
+      </nav>
+      <img id="l" src="images/aaaa.png"><br><br><br>
+      <div>
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+              <img src="images/p.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides fade">
+              <img src="images/rr.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides fade">
+              <img src="images/r.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides fade">
+                <img src="images/roti.jpg" style="width:100%">
+              </div>
+              
+            </div>
+            <br>
+            
+            <div style="text-align:center">
+              <span class="dot"></span> 
+              <span class="dot"></span> 
+              <span class="dot"></span> 
+              <span class="dot"></span> 
+            </div>
+            
+          <script>
+            var slideIndex = 0;
+            showSlides();
+            
+            function showSlides() {
+              var i;
+              var slides = document.getElementsByClassName("mySlides");
+              var dots = document.getElementsByClassName("dot");
+              for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+              }
+              slideIndex++;
+              if (slideIndex > slides.length) {slideIndex = 1}    
+              for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";  
+              dots[slideIndex-1].className += " active";
+              setTimeout(showSlides, 2000);
+            }
+          </script>
+      </div>
+</div><br><br><br>
+<center>
+    <table cellspacing="10px">
+        <tr border="3"> 
+                <td><div class="container"  style="height:150px; width: 320px;"> 
+                    <img style="height:150px;" class="image" id="v" src="images/arya.png"><div class="overlay">
+                        <div class="text">Aryabhavan<br>-Vegetarian-</div>
+                      </div>
+                    </div></td>
+                    <td><div class="container" style="height:200px; width: 320px;">
+                        <img style="height:200px;" class="image" id="v" src="images/akshayam.jpg"> <div class="overlay">
+                            <div class="text">Akshayam<br>-Veg</div>
+                          </div>
+                        </div></td>
+                        <td><div class="container" style="height:200px; width: 320px;">
+                          <img style="height:200px;" class="image" id="v" src="images/aryas.jpg"> <div class="overlay">
+                              <div class="text">Aryas<br>-Veg</div>
+                            </div>
+                          </div></td>
+                          <td><div class="container" style="height:200px; width: 320px;">
+                            <img style="height:200px;" class="image" id="v" src="images/rhr.jpg"> <div class="overlay">
+                                <div class="text">RHR<br>-Veg</div>
+                              </div>
+                            </div></td>
+        </tr>
+        <tr>
+            <td><div class="container" style="height:200px; width: 300px;">
+                <img style="height:200px;" class="image" id="v" src="images/annapoorna.jpg"><div class="overlay">
+               <div class="text">Annapoorna<br>-vegetarian-</div>
+             </div>
+           </div></td>
+           <td><div class="container" style="height:180px; width: 320px;">
+            <img style="height:180px;" class="image" id="v" src="images/anandhas (1).jpg"><div class="overlay">
+                <div class="text">Anandhas<br>-vegetarian-</div>
+              </div>
+            </div></td>
+            <td><div class="container" style="height:200px; width: 320px;">
+              <img style="height:200px;" class="image" id="v" src="images/kailash.jpg"> <div class="overlay">
+                  <div class="text">Kailash Parbat<br>-Veg</div>
+                </div>
+              </div></td>
+              <td><div class="container" style="height:200px; width: 320px;">
+                <img style="height:200px;" class="image" id="v" src="images/Annalakshmi.png"> <div class="overlay">
+                    <div class="text">Annalakshmi<br>-Veg</div>
+                  </div>
+                </div></td>
+        </tr>
+        </table>
+    </table>
+    </center>
+    </body>
+</html>
+                    

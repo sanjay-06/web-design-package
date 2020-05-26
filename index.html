@@ -1,0 +1,97 @@
+<html>
+<head>
+<title>Login Form</title>
+</style>
+ <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+	</script>
+	<script src="1.js"></script>
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all">
+	<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all">
+	<link href="//fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body onload="checkCookie()">
+<div class="layouts"> 
+	<div class="bg-layer">
+		<br><br><br><br><br><br>
+			<div class="header-main">
+			<div class="main-icon">
+			<img src="images/aaaa.png">
+			</div><br><br>
+			<div class="header-left-bottom">
+				<form id="team" method="post" action="/submit_a">
+					<div class="icon1">
+						<span class="fa fa-user"></span>
+						<input id="team_name1" name="username" type="text" placeholder="User Name" required=""/>
+					</div>
+					<div class="icon1">
+						<span class="fa fa-lock"></span>
+						<input id="team_name2" name="password" type="password" placeholder="Password" required=""/>
+					</div>
+					<div class="icon1">
+						<span class="fa fa-phone"></span>
+						<input id="team_name3" name="phonenumber" type="text" placeholder="Registered Phonenumber" required=""/>
+					</div>
+					<div class="bottom">
+						<button class="btn" onmouseover="checkCookie()">Log In</button>
+					</div>
+					<div class="links">
+						<p><a href="simple.html">New User? Register</a></p>
+						<div class="clear"></div>
+					</div>
+				</form>	
+			</div>
+			<div class="social">
+				<ul>
+					<li>Explore us in : </li>
+					<li><a href="#" class="facebook"><span class="fa fa-facebook"></span></a></li>
+					<li><a href="#" class="twitter"><span class="fa fa-twitter"></span></a></li>
+					<li><a href="#" class="google"><span class="fa fa-google-plus"></span></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	function setCookie(cname,cvalue,sec) {
+  var d = new Date();
+  d.setTime(d.getTime() + (sec*1000));
+  var expires = "expires=" + d.toGMTString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function checkCookie() {
+  var user=getCookie("user");
+  if (user != "") {
+    alert("sorry incorrect username/password/phone number");
+  } else 
+     user =document.getElementById('team_name1').value;
+     if (user != "" && user != null) {
+       setCookie("user", user, 5);
+     }
+  }
+</script>	
+</body>
+</html>
