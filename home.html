@@ -7,61 +7,44 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script>
+          function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+        </script>
         <style>
-          * {box-sizing: border-box;}
-.open-button {
-  background-color: #555;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  opacity: 0.8;
-  position: fixed;
-  bottom: 23px;
-  right: 28px;
-  width: 280px;
-}
-.chat-popup {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  right: 15px;
-  border: 3px solid #f1f1f1;
-  z-index: 9;
-}
-.form-container {
-  max-width: 300px;
-  padding: 10px;
-  background-color: white;
-}
-.form-container textarea {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  border: none;
-  background: #f1f1f1;
-  resize: none;
-  min-height: 200px;
-}
-.form-container textarea:focus {
-  background-color: #ddd;
-  outline: none;
-}
-.form-container .btn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.8;
-}
-.form-container .cancel {
-  background-color: red;
-}
-.form-container .btn:hover, .open-button:hover {
-  opacity: 1;
-}
+          .modal-header 
+          {
+              background:gray;
+              color: floralwhite;
+          }
+          .close
+           {
+                color: white;
+            }
+          .close:hover 
+          {
+              color: floralwhite;
+          }
+          .modal-header, h4, .close {
+    background-color: #333;
+    color: #fff !important;
+    text-align: center;
+    font-size: 30px;
+  }
+  .modal-header, .modal-body {
+    padding: 40px 50px;
+  }
+  .bg-1 {
+    background-color: gray;
+    color: #bdbdbd;
+  }
+  .bg-1 h3 {color: #fff;}
+  .bg-1 p {font-style: italic;}
         </style>
         <script>
           function openForm() {
@@ -74,23 +57,70 @@ function closeForm() {
         </script>
     </head>
     <body>
-        <nav class="navbar  navbar-inverse">
+          <nav class="navbar navbar-inverse">
             <div class="container-fluid">
               <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>                        
+                </button>
                 <a class="navbar-brand" href="#">WheelsForMeals</a>
               </div>
-              <ul class="nav navbar-nav">
-                <li class="active"><a>Home</a></li>
-                <li><a href="1.html">Pin your location</a></li>
-                <li><a href="hotel.html">Hotels</a></li>
-                <li><a href="app.html">Our App</a></li>
-                <li><a href="about.html">About us</a></li>
-                <li><a href="about.html">Awards</a></li>
-                <li><a href="about.html">Our location</a></li>
-                <li><a href="about.html">Contact</a></li>
-              </ul>
+              <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                  <li class="active"><a>Home</a></li>
+                  <li><a href="1.html">Pin your location</a></li>
+                  <li><a href="hotel.html">Hotels</a></li>
+                  <li><a href="app.html">Our App</a></li>
+                  <li><a href="about.html">About us</a></li>
+                  <li><a href="about.html">Awards</a></li>
+                  <li><a href="about.html">Our location</a></li>
+                  <li><a href="about.html">Contact</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="simple.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                  <li id="loginModalShow"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+              </div>
             </div>
           </nav>
+          <div id="loginModal" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg" role="content">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Login 
+                        <button type="button" class="close" id="loginModalToggle">&times;</button></h4>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/modal" method="POST">
+                            <div class="form-row">
+                                <div class="form-group col-sm-4">
+                                        <label class="sr-only" for="exampleInputusername">Username</label>
+                                        <input type="text" class="form-control form-control-sm mr-1" id="exampleInputusername" placeholder="Username" name="Username">
+                                </div>
+                                <div class="form-group col-sm-4">
+                                    <label class="sr-only" for="exampleInputPassword3">Password</label>
+                                    <input type="password" class="form-control form-control-sm mr-1" id="exampleInputPassword3" placeholder="Password" name="Password">
+                                </div>
+                                <div class="form-group col-sm-4">
+                                  <label class="sr-only" for="exampleInputPhonenumber">Phonenumber</label>
+                                  <input type="text" class="form-control form-control-sm mr-1" id="exampleInputPhonenumber" placeholder="Phonenumber" name="Phonenumber">
+                              </div>
+                                <div class="col-sm-auto">
+                                    <div class="form-check">
+                                      <center>
+                                        <button type="button" class="btn btn-secondary btn-lg ml-auto" id="loginModalToggle1">Cancel</button>&emsp13;
+                                        <button type="submit" class="btn btn-primary btn-lg ml-1" >Sign in</button> 
+                                      </center>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
           <img src="images/aaaa.png" style="width: 300px;height:50px"><br><br><br>
           <div class="container">
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -130,26 +160,122 @@ function closeForm() {
               </a>
             </div>
           </div>
-    </div><br><br><br><br><br><br>
-    <button class="open-button" onclick="openForm()"><i class="fa fa-commenting-o" aria-hidden="true"></i>  Chat with us</button>
-
-    <div class="chat-popup" id="myForm" ng-app="">
-    <form class="form-container">
-    <h1>Chat with us</h1>
-
-    <label for="msg"><b>Message</b></label>
-    <textarea id="a" ng-app="" placeholder="Type message.." name="msg" ng-model="name"></textarea>
-    <p style="float:left" ng-bind="name"></p>
-    <button type="submit" onclick="myfun2()" class="btn">Send</button>
-    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-  </form>
+    </div><br><br><br>
+    <center>
+  <div id="tour" class="bg-1" style="width: 70%;">
+    <div class="container">
+      <h3 class="text-center">Reserve a Table in your favourite Restaurants</h3><br><br>
+      <div class="row text-center">
+        <div class="col-sm-4">
+          <div class="thumbnail">
+            <img src="images/barbeque.jpg"  width="400" height="300">
+            <p><strong>Barbeque Nation</strong></p>
+            <p>Fun Republic Mall</p>
+            <button  class="btn btn-block btn-success"  data-toggle="modal" data-target="#myModal">Book Table</button><br><p></p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="thumbnail">
+            <img src="images/vj.jpg"  width="400" height="300"><br><p></p>
+            <p><strong>Vijay Elanza</strong></p>
+            <p>Peelamedu,coimbatore</p>
+            <button  class="btn btn-block btn-success"  data-toggle="modal" data-target="#myModal">Book Table</button><br>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="thumbnail">
+            <img src="images/abs.jpg"  width="400" height="300">
+            <p><strong>Absolute barbeque</strong></p>
+            <p>Lakshmi mills,coimbatore</p>
+            <button class="btn btn-block btn-success" data-toggle="modal" data-target="#myModal">Book Table</button><br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </center>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">×</button>
+            <h4><span class="glyphicon glyphicon-dish"></span>Reserve a Table</h4>
+          </div>
+          <div class="modal-body">
+            <form>
+                <div class="form-row">
+                    <dt class="form-group">Number of Guests</dt>
+                    <dd class="col-12 col-sm align-center">
+                    <input type="radio" value="1" name="guest" id="1" required> <label for="guest">1</label>&emsp;
+                    <input type="radio" value="2" name="guest" id="2" required> <label for="guest">2</label>&emsp;
+                    <input type="radio" value="3" name="guest" id="3" required> <label for="guest">3</label>&emsp;
+                    <input type="radio" value="4" name="guest" id="4" required> <label for="guest">4</label>&emsp;
+                    <input type="radio" value="5" name="guest" id="5" required> <label for="guest">5</label>&emsp;
+                    <input type="radio" value="6" name="guest" id="6" required> <label for="guest">6</label>&emsp;
+                    <input type="radio" value="6" name="guest" id="7" required> <label for="guest">7</label>&emsp;
+                    <input type="radio" value="6" name="guest" id="8" required> <label for="guest">8</label>&emsp;
+                    <input type="radio" value="6" name="guest" id="9" required> <label for="guest">9</label>&emsp;
+                    <input type="radio" value="6" name="guest" id="10" required> <label for="guest">10</label>&emsp;
+                    </dd>
+                </div><br>
+                <div class="form-row">
+                    <dt class="form-group">Section</dt>
+                    <dd class="col-12 col-sm align-center">
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-success active">
+                                <input type="radio" name="options" id="option1" autocomplete="off" checked>Vegetarian
+                            </label>
+                            <label class="btn btn-danger">
+                                <input type="radio" name="options" id="option2" autocomplete="off">Non-Vegetarian                            </label>
+                        </div>
+                    </dd>
+                </div><br>
+                <div class="form-row">
+                  <dt class="form-group">Date and Time</dt>
+                  <dd class="col-12 col-sm align-center">
+                      <div class="col-sm-6">
+                        <input type="date" class="form-control" id="Date" name="Date" placeholder="Date" required>
+                      </div>
+                      <div class="col-sm-6">
+                        <input type="time" class="form-control" id="Time" name="Time" placeholder="Time" required>
+                      </div>
+                  </dd>
+                </div><br><br><br>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-success btn-default pull-left">
+              <span class="glyphicon glyphicon-check"></span> book
+            </button>
+            <button class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+              <span class="glyphicon glyphicon-remove"></span> Cancel
+            </button>
+            <p><a href="#" data-toggle="tooltip" title="Call us 1800-03030">Need help?</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+<div>
   <script>
     function myfun2()
     {
         document.getElementById('a').value="";
         alert('we will contact you soon');
     }
+    $("#loginModalShow").click(function()
+            {
+                $("#loginModal").modal('show');
+            });
+            $("#loginModalToggle").click(function(){
+                $("#loginModal").modal('toggle');
+            });
+            $("#loginModalToggle1").click(function(){
+                $("#loginModal").modal('toggle');
+            });
+            $(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+});
   </script>
       </body>
     </html>

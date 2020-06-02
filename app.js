@@ -100,7 +100,7 @@ app.post('/submit_a',function(req,res){
 				passcheck=result[0].Password;
 			if(passcheck===hash)
 			{
-				res.redirect('home.html');
+				res.redirect('1.html');
 			}
 			else
 			{
@@ -138,6 +138,40 @@ transporter.sendMail(mailOptions, function(error, info){
 app.post('/pay',function(req,res){
 	res.redirect('preloader.html');
 });
+app.post('/modal',function(req,res){
+	console.log(req.body);
+	var MongoClient = require('mongodb').MongoClient;
+	var url = "mongodb://localhost:27017/";
+		var username1=req.body.Username;
+		var Password1=req.body.Password;
+		var phone=req.body.Phonenumber;
+		var hash=getHash(req.body.Password,req.body.Phonenumber);
+		var http = require('http');
+		var passcheck;  
+		MongoClient.connect(url, function(err, db) {  
+		if (err) throw err;
+		var dbo = db.db("gfg");  
+		var query = { Username: req.body.Username };  
+		dbo.collection("details").find(query).toArray(function(err, result) {  
+		if (err)
+		{
+			throw err;
+		}  
+				passcheck=result[0].Password;
+			if(passcheck===hash)
+			{
+				res.redirect('1.html');
+			}
+			else
+			{
+				res.setHeader('Content-Type','text/html');
+				res.end('<html><body><h1>Unauthorized 403: not supported </h1></body></html>')
+				res.redirect('home.html');
+			}
+		db.close();
+		});  
+		});
+})
 app.get('/',function(req,res){ 
 	res.set({ 
 		'Access-control-Allow-Origin': '*'

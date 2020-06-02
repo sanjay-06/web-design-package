@@ -1,0 +1,35 @@
+{
+  "name": "wd_pro",
+  "version": "1.0.0",
+  "description": "\"web package\"",
+  "main": "app.js",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.4.1",
+    "connect-flash": "^0.1.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "express-validator": "^6.4.0",
+    "mongoose": "^5.9.7",
+    "nodemailer": "^6.4.6",
+    "nodemon": "^2.0.3",
+    "passport-local": "^1.0.0",
+    "router": "^1.3.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanjay-06/web-design-package.git"
+  },
+  "author": "\"Sanjay\"",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sanjay-06/web-design-package/issues"
+  },
+  "homepage": "https://github.com/sanjay-06/web-design-package#readme"
+}

@@ -4,20 +4,27 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <script  src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-        <link rel="stylesheet" type="text/css" href="hotel.css">
+        <link rel="stylesheet" type="text/css" href="styles/hotel.css">
     </head>
     <body>
-       <nav class="navbar navbar-inverse">
+      <nav class="navbar navbar-inverse">
         <div class="container-fluid">
           <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+            </button>
             <a class="navbar-brand" href="#">WheelsForMeals</a>
           </div>
-          <ul class="nav navbar-nav">
-            <li><a href="home.html">Home</a></li>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+              <li><a href="home.html">Home</a></li>
             <li><a href="1.html">Pin your Location</a></li>
             <li class="active"><a>Hotels</a></li>
             <li><a href="home.html">Back</a></li>
-          </ul>
+            </ul>
+          </div>
         </div>
       </nav>
       <img id="l" src="images/aaaa.png"><br><br><br>
