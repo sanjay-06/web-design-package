@@ -172,7 +172,7 @@ app.post('/modal',function(req,res){
 			}
 		db.close();
 		});  
-		});
+	});
 })
 app.get('/',function(req,res){ 
 	res.set({ 
