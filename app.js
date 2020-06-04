@@ -10,13 +10,13 @@ db.once('open', function(callback){
 }) 
 var app=express() 
 app.use(express.static(__dirname));
-
+app.set('view engine', 'ejs');
 app.use(bodyParser.json()); 
 app.use(express.static('public')); 
 app.use(bodyParser.urlencoded({ 
 	extended: true
 }));
- 
+var dishRouter = require('./routes/dishRouter'); 
 var getHash = ( pass , phone ) => {
 				
 	var hmac = crypto.createHmac('sha512', phone);
@@ -110,6 +110,8 @@ app.post('/submit_a',function(req,res){
 		});  
 		});
 	});
+app.use('/dishes',dishRouter);
+
 app.post('/aboutsubmit',function(req,res){
     console.log(req.body);
 var nodemailer = require('nodemailer');
