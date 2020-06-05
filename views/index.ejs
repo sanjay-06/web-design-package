@@ -78,6 +78,15 @@
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
 }
+        .modal-header, h4, .close {
+    background-color: #333;
+    color: #fff !important;
+    text-align: center;
+    font-size: 30px;
+  }
+  .modal-header {
+    padding: 40px 50px;
+  }
     </style>
 </head>
   <body>
@@ -101,9 +110,29 @@
         </div>
       </nav>
     <center><img src="../images/aaaa.png" style="width: 300px;height:50px"><br><br>
-    <h1><%= title %></h1></center><br><br>
-    <body>
       <button class="open-button" onclick="openForm()"><i class="fa fa-comments" aria-hidden="true"></i>&emsp;Need help?</button>
+      <h1><%= title %></h1></center><br><br>
+    <body>
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Order Status</h4>
+            </div>
+            <div class="modal-body">
+            <img src="../images/order.gif" height="45%" width="45%"><p style="float: right;margin-top: 10%;margin-right: 8%;font-size:30px;" id="value"></p>
+            </div>
+            <div class="modal-footer">
+            <a href="../addme.html"><button type="button" class="btn btn-success"><i class="fa fa-rocket" aria-hidden="true"></i>&nbsp;Proceed</button></a>
+              <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="location.reload()"><i class="fa fa-refresh" aria-hidden="true"></i>&nbsp;Reset</button>
+              <button type="button" class="btn btn-warning" data-dismiss="modal"><i class="fa fa-close" aria-hidden="true"></i>&nbsp;Close</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>    
+     
     <div class="container">
     <table class="table">
       <thead>
@@ -114,17 +143,17 @@
           <th>Add</th>
           <th>Remove</th>
           <th>&emsp;Check box</th>
-        </tr>
-      <% record.forEach(function(row){%>
+        </tr> 
+      <% var i=1;var j=1;record.forEach(function(row){%>
         <tr>
           <td><%= row.no %></td>
           <td><%= row.ITEM %></td>
           <td><i class="fa fa-inr" aria-hidden="true"></i>&nbsp;<%= row.RATE %></td>
-          <td><button class="btn btn-success"><i class="fa fa-plus-circle" aria-hidden="true"></i>&emsp;ADD</button></td>
-          <td><button class="btn btn-warning"><i class="fa fa-trash-o" aria-hidden="true"></i>&emsp;Remove</button></td>
-          <td><div class="col-xs-5" onshow="myfun()"><input class="form-control"  type="text" placeholder="value of each"></div></td>
+          <td><button class="btn btn-success" id="<%= i %> " onclick="Plus(Number(this.id))"><i class="fa fa-plus-circle" aria-hidden="true"></i>&emsp;ADD</button></td>
+          <td><button class="btn btn-warning" id="<%= j %> " onclick="Minus(Number(this.id))"><i class="fa fa-trash-o" aria-hidden="true"></i>&emsp;Remove</button></td>
+          <td><div class="col-xs-5" onshow="myfun()"><input class="form-control"  type="text" placeholder="value of each" id="count<%= i %>" value=0></div></td>
         </tr>
-        <% }) %>
+        <% i++,j++; }) %>
     </table>
     <div class="chat-popup" id="myForm">
       <form action="/action_page.php" class="form-container">
@@ -136,9 +165,321 @@
         <button type="submit" class="btn">Send</button>
         <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
       </form>
-    </div>
-  </div>
+    </div><br>
+    <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="popover" title="Check Price" data-content="You can Reset using Reset button,You can continue shopping using close,Proceed to Payment" onclick="order()" ><span><i class="fa fa-check-circle-o" aria-hidden="true">&emsp;Check Price</i></span></button>
+  </div><br><br><br>
+  
   <script>
+  $(document).ready(function(){
+    $('[data-toggle="popover"]').popover();   
+  });
+  </script>
+  
+  <script>
+    $(".btn-danger").click(function(){
+   $("[data-toggle='popover']").popover('destroy');
+  });
+  $(".btn-warning").click(function(){
+   $("[data-toggle='popover']").popover('destroy');
+  });
+    function order()
+    {
+      var amt = 0;
+      '<%var m=1; record.forEach(function(row){%>';
+        var rate = '<%= row.RATE %>';
+        var k = Number(document.getElementById('count<%= m %>').value);
+        amt = amt+(rate*k);
+      '<% m++; }) %>';
+      if(amt!=0)
+      {
+        document.getElementById("value").innerHTML=" Your pay is  "+'<i class="fa fa-inr" aria-hidden="true"></i>'+amt;
+        $("#myModal").modal();
+    }
+      else
+      alert("Please order something!!!")
+        document.body.appendChild(x); 
+    }
+    var count1=count2=count3=count4=count5=count6=count7=count8=count9=count10=count11=count12=count13=count14=count15=count16=count17=count18=count19=count20=count21=0;
+    var i=1;
+    function Plus(i)
+    {
+      if(i==1)
+      {
+        count1++;
+        document.getElementById("count1").value=count1;
+      }
+      if(i==2)
+      {
+        count2++;
+        document.getElementById("count2").value=count2;
+      }
+      if(i==3)
+      {
+        count3++;
+        document.getElementById("count3").value=count3;
+      }
+      if(i==4)
+      {
+        count4++;
+        document.getElementById("count4").value=count4;
+      }
+      if(i==5)
+      {
+        count5++;
+        document.getElementById("count5").value=count5;
+      }
+      if(i==6)
+      {
+        count6++;
+        document.getElementById("count6").value=count6;
+      }
+      if(i==7)
+      {
+        count7++;
+        document.getElementById("count7").value=count7;
+      }
+      if(i==8)
+      {
+        count8++;
+        document.getElementById("count8").value=count8;
+      }
+      if(i==9)
+      {
+        count9++;
+        document.getElementById("count9").value=count9;
+      }
+      if(i==10)
+      {
+        count10++;
+        document.getElementById("count10").value=count10;
+      }
+      if(i==11)
+      {
+        count11++;
+        document.getElementById("count11").value=count11;
+      }
+      if(i==12)
+      {
+        count12++;
+        document.getElementById("count12").value=count12;
+      }
+      if(i==13)
+      {
+        count13++;
+        document.getElementById("count13").value=count13;
+      }
+      if(i==14)
+      {
+        count14++;
+        document.getElementById("count14").value=count14;
+      }
+      if(i==15)
+      {
+        count15++;
+        document.getElementById("count15").value=count15;
+      }
+      if(i==16)
+      {
+        count16++;
+        document.getElementById("count16").value=count16;
+      }
+      if(i==17)
+      {
+        count17++;
+        document.getElementById("count17").value=count17;
+      }
+      if(i==18)
+      {
+        count18++;
+        document.getElementById("count18").value=count18;
+      }
+      if(i==19)
+      {
+        count19++;
+        document.getElementById("count19").value=count19;
+      }
+      if(i==20)
+      {
+        count20++;
+        document.getElementById("count20").value=count20;
+      }
+      if(i==21)
+      {
+        count21++;
+        document.getElementById("count21").value=count21;
+      }
+    } 
+    function Minus(k)
+    {
+      if(k==1)
+      {
+        if (count1 > 0) 
+        {
+          count1--;
+          document.getElementById("count1").value=count1;
+        }
+      }
+      if(k==2)
+      {
+        if (count2 > 0) 
+        {
+          count2--;
+          document.getElementById("count2").value=count2;
+        }
+      }
+      if(k==3)
+      {
+        if (count3 > 0) 
+        {
+          count3--;
+          document.getElementById("count3").value=count3;
+        }
+      }
+      if(k==4)
+      {
+        if (count4 > 0) 
+        {
+          count4--;
+          document.getElementById("count4").value=count4;
+        }
+      }
+      if(k==5)
+      {
+        if (count5 > 0) 
+        {
+          count5--;
+          document.getElementById("count5").value=count5;
+        }
+      }
+      if(k==6)
+      {
+        if (count6 > 0) 
+        {
+          count6--;
+          document.getElementById("count6").value=count6;
+        }
+      }
+      if(k==7)
+      {
+        if (count7 > 0) 
+        {
+          count7--;
+          document.getElementById("count7").value=count7;
+        }
+      }
+      if(k==8)
+      {
+        if (count8 > 0) 
+        {
+          count8--;
+          document.getElementById("count8").value=count8;
+        }
+      }
+      if(k==9)
+      {
+        if (count9 > 0) 
+        {
+          count9--;
+          document.getElementById("count9").value=count9;
+        }
+      }
+      if(k==10)
+      {
+        if (count10 > 0) 
+        {
+          count10--;
+          document.getElementById("count10").value=count10;
+        }
+      }
+      if(k==11)
+      {
+        if (count11 > 0) 
+        {
+          count11--;
+          document.getElementById("count11").value=count11;
+        }
+      }
+      if(k==12)
+      {
+        if (count12 > 0) 
+        {
+          count12--;
+          document.getElementById("count12").value=count12;
+        }
+      }
+      if(k==13)
+      {
+        if (count13 > 0) 
+        {
+          count13--;
+          document.getElementById("count13").value=count13;
+        }
+      }
+      if(k==14)
+      {
+        if (count14 > 0) 
+        {
+          count14--;
+          document.getElementById("count14").value=count14;
+        }
+      }
+      if(k==15)
+      {
+        if (count15 > 0) 
+        {
+          count15--;
+          document.getElementById("count15").value=count15;
+        }
+      }
+      if(k==16)
+      {
+        if (count16 > 0) 
+        {
+          count16--;
+          document.getElementById("count16").value=count16;
+        }
+      }
+      if(k==17)
+      {
+        if (count17 > 0) 
+        {
+          count17--;
+          document.getElementById("count17").value=count17;
+        }
+      }
+      if(k==18)
+      {
+        if (count18 > 0) 
+        {
+          count18--;
+          document.getElementById("count18").value=count18;
+        }
+      }
+      if(k==19)
+      {
+        if (count19 > 0) 
+        {
+          count19--;
+          document.getElementById("count19").value=count19;
+        }
+      }
+      if(k==20)
+      {
+        if (count20 > 0) 
+        {
+          count20--;
+          document.getElementById("count20").value=count20;
+        }
+      }
+      if(k==21)
+      {
+        if (count21 > 0) 
+        {
+          count21--;
+          document.getElementById("count21").value=count21;
+        }
+      }
+    }
     function openForm() {
   document.getElementById("myForm").style.display = "block";
 }
