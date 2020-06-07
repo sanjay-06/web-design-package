@@ -179,5 +179,5 @@ app.get('/',function(req,res){
 		'Access-control-Allow-Origin': '*'
 		}); 
 	return res.redirect('index.html'); 
-	});
+	}).listen(process.env.PORT || 3000);
 console.log("server listening at port 3000"); 
