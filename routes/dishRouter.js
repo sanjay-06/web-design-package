@@ -3,7 +3,7 @@ var dishRouter=express.Router()
 var mongoose=require('mongoose')
 var bodyParser=require('body-parser')
 var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017/";
+var url = "mongodb+srv://sanjay:sanjayshp68@cluster0-brpbe.mongodb.net/hotels?retryWrites=true&w=majority";
 dishRouter.route('/chocolateroom')
 .get((req,res)=>{
         MongoClient.connect(url, function(err, db) {

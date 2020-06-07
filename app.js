@@ -1,7 +1,7 @@
 var express=require("express"); 
 var bodyParser=require("body-parser"); 
 const mongoose = require('mongoose'); 
-mongoose.connect('mongodb://localhost:27017/gfg'); 
+mongoose.connect("mongodb+srv://sanjay:sanjayshp68@cluster0-brpbe.mongodb.net/user?retryWrites=true&w=majority"); 
 var db=mongoose.connection;
 var crypto = require('crypto'); 
 db.on('error', console.log.bind(console, "connection error")); 
@@ -81,7 +81,7 @@ transporter.sendMail(mailOptions, function(error, info){
 app.post('/submit_a',function(req,res){
 	console.log(req.body);
 	var MongoClient = require('mongodb').MongoClient;
-	var url = "mongodb://localhost:27017/";
+	var url = "mongodb+srv://sanjay:sanjayshp68@cluster0-brpbe.mongodb.net/user?retryWrites=true&w=majority";
 		var username1=req.body.username;
 		var Password1=req.body.password;
 		var phone=req.body.phonenumber;
@@ -90,7 +90,7 @@ app.post('/submit_a',function(req,res){
 		var passcheck;  
 		MongoClient.connect(url, function(err, db) {  
 		if (err) throw err;
-		var dbo = db.db("gfg");  
+		var dbo = db.db("user");  
 		var query = { Username: req.body.username };  
 		dbo.collection("details").find(query).toArray(function(err, result) {  
 		if (err)
@@ -143,7 +143,7 @@ app.post('/pay',function(req,res){
 app.post('/modal',function(req,res){
 	console.log(req.body);
 	var MongoClient = require('mongodb').MongoClient;
-	var url = "mongodb://localhost:27017/";
+	var url = "mongodb+srv://sanjay:sanjayshp68@cluster0-brpbe.mongodb.net/user?retryWrites=true&w=majority";
 		var username1=req.body.Username;
 		var Password1=req.body.Password;
 		var phone=req.body.Phonenumber;
@@ -152,7 +152,7 @@ app.post('/modal',function(req,res){
 		var passcheck;  
 		MongoClient.connect(url, function(err, db) {  
 		if (err) throw err;
-		var dbo = db.db("gfg");  
+		var dbo = db.db("user");  
 		var query = { Username: req.body.Username };  
 		dbo.collection("details").find(query).toArray(function(err, result) {  
 		if (err)
