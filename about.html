@@ -1,7 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <title>About us</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="styles/styles1/bootstrap-4.1.2/bootstrap.min.css">
 <link href="plugins1/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="styles/plugins1/OwlCarousel2-2.3.4/owl.carousel.css">
@@ -49,18 +49,25 @@
    </script>
 </head>
 <body onload="myfun()">
-	<nav class="navbar  navbar-expand-sm">
-		  <div class="navbar-header">
+	  <nav class="navbar navbar-dark navbar-expand-sm  fixed-top">
+        <div class="container">
 			<a class="navbar-brand" href="#">WheelsForMeals</a>
-		  </div>
-		  <ul class="navbar-nav">
-			<li><a class="nav-link" href="home.html">Home</a></li>
-			<li><a class="nav-link" onclick="alert('you are in the respective page')" href="#">About us</a></li>
-			<li><a class="nav-link" href="#award">Awards</a></li>
-			<li><a class="nav-link" href="#dvMap">Our location</a></li>
-			<li><a class="nav-link" href="#contact">Contact</a></li>
-		  </ul>
-	  </nav>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+           <div class="container">
+                <div class="collapse navbar-collapse" id="Navbar">
+                    <ul class="navbar-nav mr-auto">
+						<li><a class="nav-link" href="home.html">Home</a></li>
+						<li><a class="nav-link" onclick="alert('you are in the respective page')" href="#">About us</a></li>
+						<li><a class="nav-link" href="#award">Awards</a></li>
+						<li><a class="nav-link" href="#dvMap">Our location</a></li>
+						<li><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>            
+        </div>
+    </nav>
 	  <img src="images/aaaa.png" style="width: 300px;height:50px"><br><br>
 <div class="super_container">
 	<div class="split_section_right container_custom">
