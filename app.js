@@ -68,6 +68,18 @@ var mailOptions = {
   to: email,
   subject: 'Your user account is created! -wheelsformeals',
   text:'Thank you for using wheelsformeals let us stay connected.Avail exciting offers on the local restaurants!!!',
+  attachments: [
+	{
+		filename: 'aaaa.png',
+		path: __dirname + '/aaaa.png',
+		cid: 'uniq-aaaa.png' 
+	  },
+    {
+      filename: 'foodflex.jpg',
+      path: __dirname + '/foodflex.jpg',
+      cid: 'uniq-foodflex.jpg' 
+    }
+  ]
 };
 transporter.sendMail(mailOptions, function(error, info){
   if (error) {
