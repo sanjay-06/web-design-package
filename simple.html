@@ -32,7 +32,7 @@
                 }
                 function check()
                 {
-                   if(document.getElementById("l1").value!=document.getElementById("l2").value)
+                   if((document.getElementById("l1").value!=document.getElementById("l2").value)||document.getElementById("l1").value==""||document.getElementById("l2").value=="")
                   {
                     document.getElementById("l1").value="";
                     document.getElementById("l2").value="";
