@@ -88,6 +88,7 @@ transporter.sendMail(mailOptions, function(error, info){
     console.log('Email sent: ' + info.response);
   }
 }); 
+	res.statusCode=200;
 	return res.redirect("signup_success.html");  
 })
 app.post('/submit_a',function(req,res){
@@ -109,6 +110,8 @@ app.post('/submit_a',function(req,res){
 		{
 			throw err;
 		}  
+		if(result!="")
+		{
 				passcheck=result[0].Password;
 			if(passcheck===hash)
 			{
@@ -118,6 +121,13 @@ app.post('/submit_a',function(req,res){
 			{
 				res.redirect('index.html');
 			}
+		}
+		else
+		{
+			res.statusCode=404;
+			res.setHeader('Content-Type','text/html');
+			res.end('<html><body><h1>Error 404: user not found!!! </h1></body></html>')
+		}
 		db.close();
 		});  
 		});
@@ -160,7 +170,6 @@ app.post('/modal',function(req,res){
 		var Password1=req.body.Password;
 		var phone=req.body.Phonenumber;
 		var hash=getHash(req.body.Password,req.body.Phonenumber);
-		var http = require('http');
 		var passcheck;  
 		MongoClient.connect(url, function(err, db) {  
 		if (err) throw err;
@@ -169,18 +178,56 @@ app.post('/modal',function(req,res){
 		dbo.collection("details").find(query).toArray(function(err, result) {  
 		if (err)
 		{
-			throw err;
+			res.statusCode=404;
+			res.setHeader('Content-Type','text/html');
+			res.end('<html><body><h1>Error 404: user not found!!! </h1></body></html>')
 		}  
 				passcheck=result[0].Password;
 			if(passcheck===hash)
 			{
-				res.redirect('1.html');
+				res.statusCode=200;
+				var nodemailer = require('nodemailer');
+
+				var transporter = nodemailer.createTransport({
+				  service: 'gmail',
+				  auth: {
+					user: 'sanjayprasad682001@gmail.com',
+					pass: 'sanjayshp'
+				  }
+				});
+				
+				var mailOptions = {
+				  from: 'sanjayprasad682001@gmail.com',
+				  to: result[0].email,
+				  subject: 'You have applied for Premium membership in wheelsformeals',
+				  text:'Thank you for using wheelsformeals we will mail you with exclusive coupons soon!!!',
+				  attachments: [
+					{
+						filename: 'aaaa.png',
+						path: __dirname + '/aaaa.png',
+						cid: 'uniq-aaaa.png' 
+					  },
+					{
+					  filename: 'foodflex.jpg',
+					  path: __dirname + '/foodflex.jpg',
+					  cid: 'uniq-foodflex.jpg' 
+					}
+				  ]
+				};
+				transporter.sendMail(mailOptions, function(error, info){
+				  if (error) {
+					console.log(error);
+				  } else {
+					console.log('Email sent: ' + info.response);
+				  }
+				});
+				res.redirect('home.html');
 			}
 			else
 			{
+				res.statusCode=403;
 				res.setHeader('Content-Type','text/html');
 				res.end('<html><body><h1>Unauthorized 403: not supported </h1></body></html>')
-				res.redirect('home.html');
 			}
 		db.close();
 		});  

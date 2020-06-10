@@ -7,62 +7,16 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-* {box-sizing: border-box;}
-.open-button {
-  background-color: #555;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  opacity: 0.8;
-  position: fixed;
-  bottom: 23px;
-  right: 28px;
-  width: 280px;
-}
-.chat-popup {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  right: 15px;
-  border: 3px solid #f1f1f1;
-  z-index: 9;
-}
-.form-container {
-  max-width: 300px;
-  padding: 10px;
-  background-color: white;
-}
-.form-container textarea {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  border: none;
-  background: #f1f1f1;
-  resize: none;
-  min-height: 200px;
-}
-.form-container textarea:focus {
-  background-color: #ddd;
-  outline: none;
-}
-.form-container .btn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  margin-bottom:10px;
-  opacity: 0.8;
-}
-.form-container .cancel {
-  background-color: red;
-}
-.form-container .btn:hover, .open-button:hover {
-  opacity: 1;
-}
+  <script type="text/javascript">
+    (function(d, m){
+      var kommunicateSettings = {"appId":"4e06229731d1c4ed3fe4c21b843220c1","popupWidget":true,"automaticChatOpenOnNavigation":true};
+      var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+      s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+      var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+      window.kommunicate = m; m._globals = kommunicateSettings;
+    })(document, window.kommunicate || {});
+  </script>
+   <style>
         .modal-header, h4, .close {
     background-color: #333;
     color: #fff !important;
@@ -140,20 +94,6 @@
         </tr>
         <% i++,j++; }) %>
     </table>
-    <div class="chat-popup" id="myForm">
-      <form  class="form-container">
-        <h1>Chat</h1>
-    
-        <label for="msg"><b>Message</b></label>
-        <textarea placeholder="Type message.." name="msg" required></textarea>
-    
-        <button type="submit" class="btn" onclick="alert('we will contact you soon!');closeForm()">Send</button>
-        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-      </form>
-    </div><br>
-    <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="popover" title="Check Price" data-content="You can Reset using Reset button,You can continue shopping using close,Proceed to Payment" onclick="order()" ><span><i class="fa fa-check-circle-o" aria-hidden="true">&emsp;Check Price</i></span></button>
-  </div><br><br><br>
-  
   <script>
   $(document).ready(function(){
     $('[data-toggle="popover"]').popover();   

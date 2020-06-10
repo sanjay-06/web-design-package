@@ -1,5 +1,14 @@
 <html>
     <head>
+      <script type="text/javascript">
+        (function(d, m){
+          var kommunicateSettings = {"appId":"4e06229731d1c4ed3fe4c21b843220c1","popupWidget":true,"automaticChatOpenOnNavigation":true};
+          var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+          s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+          var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+          window.kommunicate = m; m._globals = kommunicateSettings;
+        })(document, window.kommunicate || {});
+      </script>
         <title>home</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -115,7 +124,7 @@ function closeForm() {
                                       <center>
                                         <br><br><br>
                                         <button type="button" class="btn btn-secondary btn-lg ml-auto" id="loginModalToggle1">Cancel</button>&emsp13;
-                                        <button type="submit" class="btn btn-primary btn-lg ml-1" >Apply</button> 
+                                        <button type="submit" class="btn btn-primary btn-lg ml-1" onclick="alert('Please it might take few seconds')">Apply</button> 
                                       </center>
                                     </div>
                                 </div>
