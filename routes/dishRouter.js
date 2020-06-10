@@ -399,12 +399,13 @@ dishRouter.route('/venu')
         MongoClient.connect(url, function(err, db) {
           if (err) throw err;
           var dbo = db.db("hotels");
-          dbo.collection("venu").find({}).toArray(function(err, result) {
+          dbo.collection("Venu").find({}).toArray(function(err, result) {
             if (err) throw err;
             res.render('index', {
               "title":"Dindukkal Venu Briyani",
               "record" : result
           });
+          console.log(result);
             db.close();
             });
         });
