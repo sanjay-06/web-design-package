@@ -49,7 +49,6 @@
         </div>
       </nav>
     <center><img src="../images/aaaa.png" style="width: 300px;height:50px"><br><br>
-      <button class="open-button" onclick="openForm()"><i class="fa fa-comments" aria-hidden="true"></i>&emsp;Need help?</button>
       <h1><%= title %></h1></center><br><br>
     <body>
       <div class="modal fade" id="myModal" role="dialog">
@@ -93,7 +92,8 @@
           <td><div class="col-xs-5" onshow="myfun()"><input class="form-control"  type="text" placeholder="value of each" id="count<%= i %>" value=0></div></td>
         </tr>
         <% i++,j++; }) %>
-    </table>
+    </table><br>
+    <button type="button" class="btn btn-primary btn-block"  onclick="order()"><i class="fa fa-check-circle-o" aria-hidden="true"></i>&emsp;Check Price</button><br>
   <script>
   $(document).ready(function(){
     $('[data-toggle="popover"]').popover();   
