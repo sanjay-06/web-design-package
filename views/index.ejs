@@ -70,12 +70,14 @@
           
         </div>
       </div>    
-     
+      <div class="alert alert-success alert-dismissible">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <center><strong>Info!&emsp;</strong>You can add or remove items and check their prices using Check price button.</center>
+      </div>
     <div class="container">
     <table class="table">
       <thead>
         <tr>
-          <th>S.no</th>
           <th>Item</th>
           <th>Rate</th>
           <th>Add</th>
@@ -84,7 +86,6 @@
         </tr> 
       <% var i=1;var j=1;record.forEach(function(row){%>
         <tr>
-          <td><%= row.no %></td>
           <td><%= row.ITEM %></td>
           <td><i class="fa fa-inr" aria-hidden="true"></i>&nbsp;<%= row.RATE %></td>
           <td><button class="btn btn-success" id="<%= i %> " onclick="Plus(Number(this.id))"><i class="fa fa-plus-circle" aria-hidden="true"></i>&emsp;ADD</button></td>
