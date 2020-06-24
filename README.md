@@ -11,14 +11,8 @@ This is a webpage made with nodejs/angularjs/bootstrap4/bootstrap3/jquery/javasc
 
 ## Quick start
 
-#### Install
-
-      npm install
-      npm install express
-      npm install nodemon
-      npm install express-validator
-      npm install mongoose
-      npm install ejs
+### Website Link
+<a href="https://foodordering-sanjay.herokuapp.com/">APP LINK</a>
 
 #### Start the server
       npm start
