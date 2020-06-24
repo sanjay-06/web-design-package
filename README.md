@@ -3,7 +3,7 @@ This is a webpage made with nodejs/angularjs/bootstrap4/bootstrap3/jquery/javasc
 
 <h1>WEBSITE</h1>
 
-![gitlogo](login.PNG)
+![gitlogo](login.png)
 
 # Package Usage
 
